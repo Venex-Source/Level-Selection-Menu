@@ -1,0 +1,51 @@
+[gd_scene load_steps=8 format=3 uid="uid://b36fwb7lgbg7a"]
+
+[ext_resource type="Texture2D" uid="uid://drxboe2dutwo2" path="res://assets/Button.png" id="1_1bt8m"]
+[ext_resource type="Texture2D" uid="uid://drj318vf33lim" path="res://assets/button_atlas_texture.tres" id="2_8f2m0"]
+[ext_resource type="Script" path="res://level_button.gd" id="3_0wn53"]
+[ext_resource type="FontFile" uid="uid://cblgrblpwt4w2" path="res://assets/LilitaOne-Regular.ttf" id="3_b6e13"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j3igc"]
+atlas = ExtResource("1_1bt8m")
+region = Rect2(548, 668, 181, 189)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0d5ma"]
+atlas = ExtResource("1_1bt8m")
+region = Rect2(969, 668, 181, 189)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_skyqn"]
+atlas = ExtResource("1_1bt8m")
+region = Rect2(759, 668, 181, 189)
+
+[node name="LevelButton" type="TextureButton"]
+custom_minimum_size = Vector2(50, 50)
+offset_right = 40.0
+offset_bottom = 40.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+disabled = true
+texture_normal = SubResource("AtlasTexture_j3igc")
+texture_pressed = SubResource("AtlasTexture_0d5ma")
+texture_hover = SubResource("AtlasTexture_skyqn")
+texture_disabled = ExtResource("2_8f2m0")
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("3_0wn53")
+
+[node name="Label" type="Label" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0.690196, 0.862745, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("3_b6e13")
+theme_override_font_sizes/font_size = 35
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

@@ -1,0 +1,93 @@
+[gd_scene load_steps=9 format=3 uid="uid://pochijlnyam2"]
+
+[ext_resource type="Texture2D" uid="uid://f8cl0d3xobxe" path="res://assets/BG.png" id="1_fkkfq"]
+[ext_resource type="FontFile" uid="uid://cblgrblpwt4w2" path="res://assets/LilitaOne-Regular.ttf" id="2_odoxf"]
+[ext_resource type="Texture2D" uid="uid://drxboe2dutwo2" path="res://assets/Button.png" id="3_clehs"]
+[ext_resource type="Script" path="res://BackButton.gd" id="4_apx03"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_awbq7"]
+atlas = ExtResource("3_clehs")
+region = Rect2(173, 433, 425, 189)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gn4g6"]
+atlas = ExtResource("3_clehs")
+region = Rect2(1085, 433, 426, 189)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cdnp7"]
+atlas = ExtResource("3_clehs")
+region = Rect2(629, 433, 425, 189)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vytju"]
+atlas = ExtResource("3_clehs")
+region = Rect2(1541, 433, 426, 189)
+
+[node name="Level 1" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_fkkfq")
+expand_mode = 1
+
+[node name="LevelLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0.568627, 0.0745098, 0.0823529, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_odoxf")
+theme_override_font_sizes/font_size = 150
+text = "level 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BackButton" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -121.5
+offset_top = -172.0
+offset_right = 121.5
+offset_bottom = -72.0
+grow_horizontal = 2
+grow_vertical = 0
+texture_normal = SubResource("AtlasTexture_awbq7")
+texture_pressed = SubResource("AtlasTexture_gn4g6")
+texture_hover = SubResource("AtlasTexture_cdnp7")
+texture_disabled = SubResource("AtlasTexture_vytju")
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("4_apx03")
+
+[node name="Label" type="Label" parent="BackButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0.690196, 0.862745, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("2_odoxf")
+theme_override_font_sizes/font_size = 50
+text = "Back"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="BackButton" to="BackButton" method="_on_pressed"]
