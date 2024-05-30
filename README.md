@@ -6,7 +6,7 @@ This repository contains the code for a tutorial on how to create a level select
 ![The level select you'll create](./assets/LevelSelect.gif)
 
 ## Tutorial Video
-⏭ Check out the full tutorial on YouTube: [Watch Now]()
+⏭ Check out the full tutorial on YouTube: [Watch Now](https://youtu.be/PztV8LiQk34)
 
 ## Features
 - Grid-style level selection menu
